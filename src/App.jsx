@@ -15,10 +15,10 @@ function App() {
   return (
     <div className="App">
       <div className="headPart">
-        <a href="mailto:contact@potential49.com"><img src={logo} /></a>
+        <img src={logo} />
       </div>
       <div className="comingSoon">
-        <img src={slogan} />
+        <a href="mailto:contact@potential49.com"><img src={slogan} /></a>
         <p className="soonText">Coming Soon</p>
       </div>
       <div className="footer">
