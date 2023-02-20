@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <div className="headPart">
-        <img src={logo} />
+        <a href="mailto:contact@potential49.com"><img src={logo} /></a>
       </div>
       <div className="comingSoon">
         <img src={slogan} />
