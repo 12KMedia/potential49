@@ -1,9 +1,8 @@
-// src/App.js
-import React, { useState } from 'react';
-import { InView } from 'react-intersection-observer';
-import FixedArea from './components/FixedArea';
+import React, { useState } from 'react'
 
-import { css } from '@emotion/react';
+import { Parallax, useParallax } from 'react-scroll-parallax'
+
+// import { Mailer } from 'nodemailer-react'
 
 import logo from './assets/P49-Logo-final.png'
 import slogan from './assets/potential_slogan.png'
@@ -22,10 +21,10 @@ import orangeTriangle from './assets/orange_triangle.png'
 import logoShort from './assets/P49-Logo-kurz.png'
 import africaMap from './assets/africa_map.png'
 
+
 import './App.scss'
 
-const App = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [topic, setTopic] = useState('');
@@ -45,49 +44,72 @@ const App = () => {
     // }
   }
 
-  const handleInViewChange = (index, inView) => {
-    if (inView) {
-      setActiveIndex(index);
-    }
-  };
+  // function submitForm(name, email, topic, message) {
+  //   // Create a nodemailer transporter
+  //   const transporter = nodemailer.createTransport({
+  //     host: 'v073171.kasserver.com',
+  //     port: 465,
+  //     auth: {
+  //       user: "hello@whatsmojo.com",
+  //       pass: "82cCKdVwfJKgcPXf"
+  //     }
+  //   });
+  //
+  //   // Create an email message
+  //   const mailOptions = {
+  //     from: '"Fred Foo 👻" <foo@example.com>',
+  //     to: 'fabian@12kmedia.com',
+  //     subject: `New message from ${name} (${email}) - ${topic}`,
+  //     text: message,
+  //   };
+  //
+  //   // Send the email
+  //   transporter.sendMail(mailOptions, function (error, info) {
+  //     if (error) {
+  //       console.log(error);
+  //     } else {
+  //       console.log('Email sent: ' + info.response);
+  //     }
+  //   });
+  // }
 
   return (
     <div className="App">
-      <FixedArea activeIndex={activeIndex}
-        topLeftImage={greenOrange}
-        bottomRightImage={orangeTriangle}>
-        <div className="headSection">
-          <div className="topRow">
-            <img src={greenOrange} width="80" alt="Landscape" style={{ maxWidth: 'none', maxHeight: 'none' }} />
-          </div>
-          <div className="logoSection">
-            <img src={logo} width="40%" />
-            <p className="logoSlogan">Expand smart in Sub-Saharan Africa</p>
-          </div>
-        </div>
+      <div className="topRow">
+        <Parallax translateX={['-10vw', '200vw']} translateY={['-21vh', '250vh']} speed={1000} easing="easeInQuad" style={{ width: '80px',
+      height: '80px',
+      position: 'absolute' }} ><img src={greenOrange} width="80" alt="Landscape" style={{ maxWidth: 'none', maxHeight: 'none' }} /></Parallax>
+      </div>
+      <Parallax className="logoSection" translateY={['-21vh', '20vh']} speed={-30}>
+        <img src={logo} width="40%" />
+        <p className="logoSlogan">Expand smart in Sub-Saharan Africa</p>
+      </Parallax>
+      <Parallax className="container" speed={30}>
         <div className="initialSection imageBoxSection">
           <div className="boxInner">
-            <div className="backgroundPart" />
-            <div className="sectionInner" >
+            <Parallax className="backgroundPart" speed={-50} />
+            <Parallax className="sectionInner" speed={-30}>
               <div className="sectionDescription">
                 <div className="descriptionInner">
-                  <img src={logoShort} width="200" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(-100%, -500%)'}` }} />
-                  <div className="whiteBox" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(-100%, 0%)'}` }}>
+                  <img src={logoShort} width="200" />
+                  <div className="whiteBox">
                     <p className="mainText">„Europe should stop thinking of Africa as a charity case.<br />It is a business case!“</p>
                     <p className="authorInfo">Dr. Obiageli „Oby“ Ezekwesili<br />Richard von Weizäcker Fellow of Robert Bosch Academy at the GP Circle Dinner „Governance on Africa, 2020</p>
                   </div>
                 </div>
               </div>
-              <div className="mapInfo" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, 150%)'}` }}>
+              <div className="mapInfo">
                 <p className="mapTitle">Sub-Saharan Africa 49 countries</p>
                 <img src={africaMap} />
               </div>
-            </div>
+            </Parallax>
           </div>
         </div>
         <div className="secondSection imageBoxSection">
-          <img src={secondImage} className="bgImage" width="100%" />
-          <div className="sectionDescription" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>
+          <Parallax translateY={['200px', '600px']} opacity={[0, 100]} easing="easeInQuad">
+            <img src={secondImage} width="100%" />
+          </Parallax>
+          <Parallax className="sectionDescription" translateY={['800px', '400px']}>
             <div className="descriptionInner">
               <img src={logoShort} width="200" />
               <div className="whiteBox">
@@ -102,72 +124,82 @@ const App = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          </Parallax>
         </div>
         <div className="thirdSection imageBoxSection">
-          <img src={thirdImage} className="bgImage" />
-          <div className="sectionDescription">
+          <Parallax translateY={['200px', '600px']} easing="easeInQuad">
+            <img src={thirdImage} />
+          </Parallax>
+          <Parallax className="sectionDescription" translateY={['800px', '400px']}>
             <div className="descriptionInner">
-              <div className="whiteBox" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-100%, 0%)'}` }}>
+              <div className="whiteBox">
                 <p className="mainText">Jetzt ist die Zeit, Afrika als Marke zu positionieren. Gemeinsam können wir die Potentiale des Kontinents in ein richtiges Licht rücken.</p>
                 <p className="authorInfo">Stephan Balzer<br />Projektpartner</p>
               </div>
             </div>
-          </div>
+          </Parallax>
         </div>
-        <div className="statistics statsGreen">
-          <p className="statsHeadline">Was spricht für eine geschäftliche Expansion in Subsahara-Afrika?</p>
-          <div className="statisticsData">
-            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
-              <div className="statsTitle">Niedrige Lohnkosten</div>
-              <div className="statsValue">32%</div>
-            </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
-              <p className="statsTitle">Ungesättigte Märkte</p>
-              <p className="statsValue">19,3%</p>
-            </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
-              <p className="statsTitle">Spricht nichts dafür</p>
-              <p className="statsValue">39,1%</p>
+        <Parallax translateY={['200px', '600px']} opacity={[0, 100]} easing="easeInQuad">
+          <div className="statistics statsGreen">
+            <p className="statsHeadline">Was spricht für eine geschäftliche Expansion in Subsahara-Afrika?</p>
+            <div className="statisticsData">
+              <Parallax className="statsRow" opacity={[0, 5]} translateX={['-100%', '0%']} easing="easeInQuad">
+                <div className="statsTitle">Niedrige Lohnkosten</div>
+                <div className="statsValue">32%</div>
+              </Parallax>
+              <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
+                <p className="statsTitle">Ungesättigte Märkte</p>
+                <p className="statsValue">19,3%</p>
+              </Parallax>
+              <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
+                <p className="statsTitle">Spricht nichts dafür</p>
+                <p className="statsValue">39,1%</p>
+              </Parallax>
             </div>
           </div>
-        </div>
+        </Parallax>
+        <Parallax translateY={['200px', '600px']} opacity={[0, 100]} easing="easeInQuad">
         <div className="statistics statsRed">
           <p className="statsHeadline">Was spricht gegen eine geschäftliche Expansion in Subsahara-Afrika?</p>
           <div className="statisticsData">
-            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
               <div className="statsTitle">Mangelnde Rechtssicherheit</div>
               <div className="statsValue">47,3%</div>
-            </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            </Parallax>
+            <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
               <p className="statsTitle">Politische Instabilität</p>
               <p className="statsValue">53,2%</p>
-            </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            </Parallax>
+            <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
               <p className="statsTitle">Hohe Kriminalität</p>
               <p className="statsValue">28,6%</p>
-            </div>
+            </Parallax>
           </div>
         </div>
+        </Parallax>
+        <Parallax translateY={['200px', '600px']} opacity={[0, 100]} easing="easeInQuad">
         <div className="statistics statsOrange">
           <p className="statsHeadline">Wie interessant ist Sub-Sahara Afrika als Investitionsstandort?</p>
           <div className="statisticsData">
-            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
               <div className="statsTitle">Interessant</div>
               <div className="statsValue">29,1%</div>
-            </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            </Parallax>
+            <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
               <p className="statsTitle">Unentschieden</p>
               <p className="statsValue">13,3%</p>
-            </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            </Parallax>
+            <Parallax className="statsRow" opacity={[0, 5]} easing="easeInQuad">
               <p className="statsTitle">Uninteressant</p>
               <p className="statsValue">57,6%</p>
-            </div>
+            </Parallax>
           </div>
         </div>
+        </Parallax>
         <div className="fourthSection imageBoxSection">
-          <img src={fourthImage} className="bgImage" width="100%" />
+          <div translateY={['300px', '600px']} opacity={[0, 100]} easing="easeInQuad">
+            <img src={fourthImage} width="100%" />
+          </div>
           <div className="sectionDescription">
             <div className="descriptionInner">
               <img src={logoShort} width="200" />
@@ -179,7 +211,9 @@ const App = () => {
           </div>
         </div>
         <div className="fifthSection imageBoxSection">
-          <img src={fifthImage} className="bgImage" width="100%" />
+          <div translateY={['300px', '600px']} opacity={[0, 100]} easing="easeInQuad">
+            <img src={fifthImage} width="100%" />
+          </div>
           <div className="sectionDescription">
             <div className="descriptionInner">
               <img src={logoShort} width="200" />
@@ -200,7 +234,9 @@ const App = () => {
         </div>
         <div className="contactSection imageBoxSection">
           <div className="boxInner">
-            <img src={contactImage} className="bgImage" width="100%" />
+            <div translateY={['300px', '600px']} opacity={[0, 100]} easing="easeInQuad">
+              <img src={contactImage} width="100%" />
+            </div>
             <div className="sectionInner">
               <div className="sectionDescription">
                 <div className="descriptionInner">
@@ -269,88 +305,15 @@ const App = () => {
             </div>
           </div>
         </div>
-      </FixedArea>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(0, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(1, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(2, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(3, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(4, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(5, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(6, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(7, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(8, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(9, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <InView
-        threshold={0.5}
-        onChange={(inView) => handleInViewChange(10, inView)}
-      >
-        <div style={{ height: '100vh' }} />
-      </InView>
-
-      <div style={{ height: '100vh' }} />
+      </Parallax>
+      <div className="footer">
+        <div className="footerRow">
+          <a href="/imprint">Impressum</a>
+          <img src={orangeTriangle} width="80" />
+        </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
