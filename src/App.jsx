@@ -1,7 +1,8 @@
 // src/App.js
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { InView } from 'react-intersection-observer';
 import FixedArea from './components/FixedArea';
+import axios from 'axios';
 
 import { css } from '@emotion/react';
 
@@ -11,6 +12,7 @@ import redOnion from './assets/red_onion_logo.png'
 import fnfLogo from './assets/fnf.png'
 import globalLogo from './assets/global_logo.png'
 import phineoLogo from './assets/phineo_logo.png'
+import hiddenChampionLogo from './assets/hidden_champions.png'
 import firstImage from './assets/firsstSection.png'
 import secondImage from './assets/secondSection.jpg'
 import thirdImage from './assets/thirdSection.png'
@@ -30,23 +32,39 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [topic, setTopic] = useState('');
   const [message, setMessage] = useState('');
+  const [sentMessage, setSentMessage] = useState(false)
 
-  const handleSubmit = (event) => {
+  const prevActiveIndexRef = useRef();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Topic: ${topic}, Message: ${message}`);
+    // console.log(`Name: ${name}, Email: ${email}, Topic: ${topic}, Message: ${message}`);
 
     // // Check if the form is valid
-    // if (name && email && topic && message) {
-    //   // Send the email with the form data
-    //   // submitForm(name, email, topic, message);
-    // } else {
-    //   // Display an error message
-    //   alert('Please fill out all fields.');
-    // }
+    if (name && email && topic && message) {
+      // Send the email with the form data
+      // submitForm(name, email, topic, message);
+      try {
+        await axios.post('https://potential49backend.onrender.com/send-email', {
+          name: name,
+          email: email,
+          topic: topic,
+          message: message,
+        });
+        console.log('Email sent successfully');
+        setSentMessage(true)
+      } catch (error) {
+        console.error('Error sending email:', error);
+      }
+    } else {
+      // Display an error message
+      alert('Please fill out all fields.');
+    }
   }
 
   const handleInViewChange = (index, inView) => {
     if (inView) {
+      prevActiveIndexRef.current = activeIndex;
       setActiveIndex(index);
     }
   };
@@ -54,12 +72,8 @@ const App = () => {
   return (
     <div className="App">
       <FixedArea activeIndex={activeIndex}
-        topLeftImage={greenOrange}
-        bottomRightImage={orangeTriangle}>
+        prevActiveIndex={prevActiveIndexRef.current}>
         <div className="headSection">
-          <div className="topRow">
-            <img src={greenOrange} width="80" alt="Landscape" style={{ maxWidth: 'none', maxHeight: 'none' }} />
-          </div>
           <div className="logoSection">
             <img src={logo} width="40%" />
             <p className="logoSlogan">Expand smart in Sub-Saharan Africa</p>
@@ -122,11 +136,11 @@ const App = () => {
               <div className="statsTitle">Niedrige Lohnkosten</div>
               <div className="statsValue">32%</div>
             </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-220%, 0%)' : 'translate(220%, 0%)'}` }}>
               <p className="statsTitle">Ungesättigte Märkte</p>
               <p className="statsValue">19,3%</p>
             </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <div className="statsRow" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : activeIndex > 4 ? 'translate(-320%, 0%)' : 'translate(320%, 0%)'}` }}>
               <p className="statsTitle">Spricht nichts dafür</p>
               <p className="statsValue">39,1%</p>
             </div>
@@ -139,11 +153,11 @@ const App = () => {
               <div className="statsTitle">Mangelnde Rechtssicherheit</div>
               <div className="statsValue">47,3%</div>
             </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-220%, 0%)' : 'translate(220%, 0%)'}` }}>
               <p className="statsTitle">Politische Instabilität</p>
               <p className="statsValue">53,2%</p>
             </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <div className="statsRow" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : activeIndex > 5 ? 'translate(-320%, 0%)' : 'translate(320%, 0%)'}` }}>
               <p className="statsTitle">Hohe Kriminalität</p>
               <p className="statsValue">28,6%</p>
             </div>
@@ -156,11 +170,11 @@ const App = () => {
               <div className="statsTitle">Interessant</div>
               <div className="statsValue">29,1%</div>
             </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-220%, 0%)' : 'translate(220%, 0%)'}` }}>
               <p className="statsTitle">Unentschieden</p>
               <p className="statsValue">13,3%</p>
             </div>
-            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-120%, 0%)' : 'translate(120%, 0%)'}` }}>
+            <div className="statsRow" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : activeIndex > 6 ? 'translate(-320%, 0%)' : 'translate(320%, 0%)'}` }}>
               <p className="statsTitle">Uninteressant</p>
               <p className="statsValue">57,6%</p>
             </div>
@@ -170,8 +184,8 @@ const App = () => {
           <img src={fourthImage} className="bgImage" width="100%" />
           <div className="sectionDescription">
             <div className="descriptionInner">
-              <img src={logoShort} width="200" />
-              <div className="whiteBox">
+              <img src={logoShort} width="200" style={{ transform: `${activeIndex === 7 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
+              <div className="whiteBox" style={{ transform: `${activeIndex === 7 ? 'translate(0%, 0%)' : 'translate(0%, 150%)'}` }}>
                 <p className="mainTitle">Zielgruppe</p>
                 <p className="subtext">Wir richten uns an die jungen Menschen in Deutschland, die über das wirtschaftliche, politische und geistige Vermögen verfügen, Subsahara-Afrika auf seinem Weg zum Innovations- und Wachstumsstandort zu unterstützen. Wir denken sowohl im B2B-Bereich, als auch durch die Förderung junger Entrepreneure und künstlerischer Kooperationen.</p>
               </div>
@@ -182,16 +196,16 @@ const App = () => {
           <img src={fifthImage} className="bgImage" width="100%" />
           <div className="sectionDescription">
             <div className="descriptionInner">
-              <img src={logoShort} width="200" />
-              <div className="whiteBox">
+              <img src={logoShort} width="200" style={{ transform: `${activeIndex === 8 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
+              <div className="whiteBox" style={{ transform: `${activeIndex === 8 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }}>
                 <p className="mainTitle">Zielgruppe</p>
                 <p className="subtext">Wir betreiben dabei grundlegende Aufklärungsarbeit und Agenda Setting,um den Markt entsprechend zu stimulieren:</p>
               </div>
               <div className="coloredBoxes">
-                <div className="coloredBox redBox">
+                <div className="coloredBox redBox" style={{ transform: `${activeIndex === 8 ? 'translate(0%, 0%)' : 'translate(0%, 250%)'}` }}>
                   Erfolgsversprechende Finanzierungsvehikel mit Anreizen für Investoren entwickeln
                 </div>
-                <div className="coloredBox greenBox">
+                <div className="coloredBox greenBox" style={{ transform: `${activeIndex === 8 ? 'translate(0%, 0%)' : 'translate(0%, 450%)'}` }}>
                   Ein starkes Netzwerk von Schlüsselpersonen und Partnern aufbauen, die private Investitionen sowie den Aufbau eines Impact Fonds für Subsahara unterstützen und befürworten.
                 </div>
               </div>
@@ -204,10 +218,13 @@ const App = () => {
             <div className="sectionInner">
               <div className="sectionDescription">
                 <div className="descriptionInner">
-                  <img src={logoShort} width="200" />
-                  <div className="whiteBox">
+                  <img src={logoShort} width="200" style={{ transform: `${activeIndex === 9 ? 'translate(0%, 0%)' : 'translate(-100%, -500%)'}` }} />
+                  <div className="whiteBox" style={{ transform: `${activeIndex === 9 ? 'translate(0%, 0%)' : 'translate(0%, 250%)'}` }}>
                     <p className="mainText">Kontakt</p>
-                    <form onSubmit={handleSubmit}>
+                    {sentMessage &&
+                      <p>Danke für deine Nachricht! Wir werden uns umgehend bei dir melden.</p>
+                    }
+                    <form onSubmit={handleSubmit} style={{ visibility: sentMessage ? 'hidden' : 'visible' }}>
                       <label>
                         Name:
                         <input
@@ -253,19 +270,18 @@ const App = () => {
         </div>
         <div className="sponsorSection">
           <div className="initialRow">
-            <img src={logo} width="40%" />
-            <p className="logoSlogan">Expand smart in Sub-Saharan Africa</p>
+            <img src={logo} width="30%" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
+            <p className="logoSlogan" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }}>Expand smart in Sub-Saharan Africa</p>
           </div>
           <p>Unsere Initiatoren und Projektpartener:</p>
           <div className="sponsorGrid">
             <div className="logoRow">
-              <img key="0" src={fnfLogo} alt="" />
-              <img key="1" src={globalLogo} alt="" />
+              <img key="0" src={fnfLogo} alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
+              <img key="1" src={globalLogo} alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 500%)'}` }} />
             </div>
             <div className="logoRow">
-              <img key="2" src={globalLogo} alt="" />
-              <img key="3" src={phineoLogo} alt="" />
-              <img key="4" src={globalLogo} alt="" />
+              <img key="2" src={hiddenChampionLogo} height="80%" alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
+              <img key="3" src={phineoLogo} alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 500%)'}` }} />
             </div>
           </div>
         </div>

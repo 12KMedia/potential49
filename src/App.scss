@@ -1,12 +1,15 @@
 .App {
   position: relative;
   .headSection {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .topRow {
 
     }
     .logoSection {
       text-align: center;
-      margin-top: 250px;
       .logoSlogan {
         margin-top: 50px;
         font-family: 'Gotham';
@@ -178,8 +181,11 @@
             position: absolute;
             top: -55px;
             left: -23px;
+            transition: transform 1s;
+            z-index: 2;
           }
           .whiteBox {
+            transition: transform 1s;
             .mainTitle {
               font-weight: bold;
               font-size: 50px;
@@ -200,8 +206,11 @@
             position: absolute;
             top: -55px;
             left: -23px;
+            z-index: 2;
+            transition: transform 1s;
           }
           .whiteBox {
+            transition: transform 1s;
             .mainTitle {
               font-weight: bold;
               font-size: 50px;
@@ -218,6 +227,7 @@
               padding: 35px 20px;
               color: #ffffff;
               font-size: 18px;
+              transition: transform 1s;
             }
             .greenBox {
               background-color: #235f29;
@@ -234,17 +244,21 @@
       .sectionDescription {
         padding: 0;
         width: 44%;
-        top: 10%;
+        top: 15%;
         left: 0;
         right: inherit;
+        z-index: 3;
         .descriptionInner {
           img {
             position: absolute;
             top: -55px;
             left: -23px;
+            z-index: 2;
+            transition: transform 1s;
           }
           .whiteBox {
             padding: 55px 37px;
+            transition: transform 1s;
             .mainTitle {
               font-weight: bold;
               font-size: 50px;
@@ -299,13 +313,14 @@
         text-align: center;
         // margin-bottom: 150px;
         img {
-
+          transition: transform 1s;
         }
         .logoSlogan {
           margin-top: 12px;
           font-family: 'Gotham';
           font-weight: 700;
           font-size: 20px;
+          transition: transform 1s;
         }
       }
       p {
@@ -321,15 +336,18 @@
         .logoRow {
           display: flex;
           flex-direction: row;
+          transition: transform 1s;
+          align-items: center;
           img {
             height: 150px;
             width: auto;
+            transition: transform 1s;
           }
         }
         .logoRow:last-of-type {
           margin-top: 50px;
           img:nth-child(2) {
-            margin: 0 100px;
+            margin: 0 50px;
           }
         }
         // img {
