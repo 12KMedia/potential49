@@ -202,11 +202,10 @@ const App = () => {
                 </div>
                 <div className="contentLower">
                   <div className="companyInfo">
-                    <p className="fontBold">red onion GmbH</p>
+                    <p className="fontBold">Project by red onion GmbH</p>
                     <p>Alexanderstraße 7</p>
-                    <p>10178 Berlin</p>
-                    <p className="pt-2"><a href="tel: +49 (0)30 7262 675 0" className="hoverpadding">+49 (0)30 7262 675 0</a></p>
-                    <p><a href="mailto:info@redonion.de" className="hoverpadding">info@redonion.de</a></p>
+                    <p style={{ marginBottom: '15px' }}>10178 Berlin</p>
+                    <p><a href="mailto:contact@potential49.com" className="hoverpadding">contact@potential49.com</a></p>
                     <p className="pt-4">© red onion GmbH, 2023</p>
                   </div>
                 </div>
@@ -311,7 +310,7 @@ const App = () => {
                 <div className="descriptionInner">
                   <div className="whiteBox" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(0%, 250%)'}` }}>
                     <p className="mainText">Kontakt</p>
-                    <p className="subText">Es ist Zeit, das Bild von Subsahara-Afrika zu verbessern!<br />Wir freuen uns über den Austausch mit Ihnen.</p>
+                    <p className="subText">Es ist Zeit, das Bild von Subsahara-Afrika zu verbessern!<br /><br />Wir freuen uns über den Austausch mit Ihnen.</p>
                     {sentMessage &&
                       <p>Danke für deine Nachricht! Wir werden uns umgehend bei dir melden.</p>
                     }
@@ -348,7 +347,7 @@ const App = () => {
                 </div>
               </div>
               <div className="personInfo" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
-                <p className="authorInfo">Stephan Balzer<br />Projektpartner</p>
+                <p className="authorInfo">Stephan Balzer,<br />Initiator</p>
               </div>
             </div>
           </div>
