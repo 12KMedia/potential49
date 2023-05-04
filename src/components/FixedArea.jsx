@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 // src/components/FixedArea.js
-import React from 'react';
+import React, { forwardRef, useRef, useImperativeHandle, useEffect } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -22,19 +22,19 @@ import greenHalfcirclesReverse from '../assets/green_halfcircles_reverse.png'
 
 const OuterBox = styled.div`
   position: fixed;
-  top: 5%;
+  top: 150px;
   left: 0%;
   width: 100%;
-  height: 90%;
+  height: calc(90% - 100px);
   overflow: hidden;
 `;
 
 const Container = styled.div`
   position: fixed;
-  top: 5%;
+  top: 150px;
   left: 10%;
   width: 80%;
-  height: 90%;
+  height: calc(90% - 100px);
   z-index: 1;
 `;
 
@@ -79,57 +79,77 @@ const bottomRightImages = [
   orangeTriangle
 ]
 
-const FixedArea = ({ children, activeIndex, prevActiveIndex }) => (
-  <OuterBox>
-    <>
-    {console.log(activeIndex)}
-    </>
+const FixedArea = forwardRef(({ children, activeIndex, prevActiveIndex }, ref) => {
+  const childRefs = useRef([]);
+  const containerRef = useRef();
 
-    <Container>
-      {React.Children.map(children, (child, index) => (
-        <div className="container">
-          <SceneContent
-            key={index}
-            css={css`
-              opacity: ${index === activeIndex ? 1 : 0};
-              transition: opacity 1s;
-            `}
-          >
-          <CornerImage
-            src={topLeftImages[activeIndex]}
-            alt="Top left"
-            css={css`
-              left: 0;
-              top: 0;
-              transform: ${
-                // activeIndex === 0 ? 'transform: translate(700%, 750%)' :
-                index === activeIndex
-                  ? 'translate(-100%, 0%)'
-                  : `translate(-200%, 0%)`
-              };
-            `}
-          />
-          {activeIndex > 0 &&
-            <CornerImage
-              src={bottomRightImages[activeIndex]}
-              alt="Bottom right"
+  useEffect(() => {
+    childRefs.current = children.map((_, i) => childRefs.current[i] ?? React.createRef());
+    console.log(childRefs.current)
+  }, [children]);
+
+  useEffect(() => {
+    console.log(containerRef.current);
+  }, []);
+
+  useImperativeHandle(ref, () => ({
+    scrollToChild: (index) => {
+      const windowHeight = window.innerHeight;
+      const targetPosition = index * windowHeight;
+      console.log('Target scroll position:', targetPosition);
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    },
+  }));
+
+
+
+  return (
+    <OuterBox>
+      <Container ref={containerRef}>
+        {React.Children.map(children, (child, index) => (
+          <div className="container" ref={childRefs.current[index]}>
+            <SceneContent
+              key={index}
               css={css`
-                right: 0;
-                bottom: 0;
-                transform: ${
-                  index === activeIndex
-                    ? 'translate(100%, 0%)'
-                    : `translate(200%, 0%)`
-                };
+                opacity: ${index === activeIndex ? 1 : 0};
+                transition: opacity 1s;
               `}
-            />
-          }
-            {child}
-          </SceneContent>
-        </div>
-      ))}
-    </Container>
-  </OuterBox>
-);
+            >
+              <CornerImage
+                src={topLeftImages[activeIndex]}
+                alt="Top left"
+                css={css`
+                  left: 0;
+                  top: 0;
+                  transform: ${
+                    index === activeIndex
+                      ? 'translate(-100%, 0%)'
+                      : `translate(-200%, 0%)`
+                  };
+                `}
+              />
+              {activeIndex > 0 && (
+                <CornerImage
+                  src={bottomRightImages[activeIndex]}
+                  alt="Bottom right"
+                  css={css`
+                    right: 0;
+                    bottom: 0;
+                    transform: ${
+                      index === activeIndex
+                        ? 'translate(100%, 0%)'
+                        : `translate(200%, 0%)`
+                    };
+                  `}
+                />
+              )}
+              {child}
+            </SceneContent>
+          </div>
+        ))}
+      </Container>
+    </OuterBox>
+  )
+});
 
 export default FixedArea;
