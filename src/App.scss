@@ -62,9 +62,9 @@
           padding: 2.25rem 2.125rem 2rem 1.6rem;
           position: fixed;
           top: 0;
-          transform: translateX(-16rem);
+          transform: translateX(-17rem);
           transition: transform .3s,padding-left .3s;
-          width: 12.2rem;
+          width: 13.2rem;
           .contentInner {
             display: flex;
             flex-direction: column;
@@ -301,10 +301,10 @@
         .sectionTitle {
           text-align: center;
           font-weight: bold;
-          font-size: 1.8rem;
+          font-size: 2.1rem;
           position: absolute;
-          top: -60px;
-          background: white;
+          top: 0;
+          // background: white;
           // border: 2px solid black;
           max-width: 80%;
           align-self: center;
@@ -410,7 +410,7 @@
           }
           .boxSubtitle {
             margin-bottom: 0;
-            font-size: 1.3rem;
+            font-size: 1.6rem;
           }
         }
         .sectionContent {
@@ -426,12 +426,12 @@
             z-index: 3;
             .headline {
               font-weight: bold;
-              text-align: center;
+              text-align: right;
               margin-bottom: 10px;
               font-size: 1.2rem;
             }
             .subtext {
-              text-align: center;
+              text-align: right;
               margin-top: 10px;
             }
           }
@@ -448,7 +448,7 @@
           flex-direction: column;
           padding: 50px;
           z-index: 3;
-          text-align: center;
+          text-align: right;
           font-size: 1.3rem;
           .boxHeader {
             text-align: center;
@@ -551,7 +551,7 @@
       .sectionDescription {
         padding: 0;
         width: 44%;
-        top: 10%;
+        top: 5%;
         left: 0;
         right: inherit;
         z-index: 3;

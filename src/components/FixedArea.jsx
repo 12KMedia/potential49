@@ -54,7 +54,7 @@ const CornerImage = styled.img`
 const topLeftImages = [
   greenOrange,
   blackRoundRevers,
-  greenRoundCorner,
+  orangeRoundCorner,
   redHalfcircles,
   blackRound,
   blackRound,
