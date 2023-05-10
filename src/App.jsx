@@ -39,9 +39,17 @@ import event11 from './assets/dakar_1.jpeg'
 import event12 from './assets/dakar_2.jpeg'
 import event13 from './assets/dakar_3.jpeg'
 import event14 from './assets/dakar_4.jpeg'
+import event21 from './assets/frankfurt_1.jpg'
+import event22 from './assets/frankfurt_2.jpg'
+import event23 from './assets/frankfurt_3.jpg'
+import event24 from './assets/frankfurt_4.jpg'
+import event25 from './assets/frankfurt_5.jpg'
+import event26 from './assets/frankfurt_6.jpg'
 import event31 from './assets/lunch_1.jpg'
 import event32 from './assets/lunch_2.jpg'
 import event33 from './assets/lunch_3.jpg'
+
+import surveyPDF from './assets/redonion_Potential49_Civey.pdf'
 
 import './App.scss'
 
@@ -69,9 +77,12 @@ const App = () => {
       event14
     ],
     event2: [
-      event1,
-      event2,
-      event3,
+      event21,
+      event22,
+      event23,
+      event24,
+      event25,
+      event26
     ],
     event3: [
       event31,
@@ -293,7 +304,7 @@ const App = () => {
                 <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-200%, 0%)'}` }}>Stichprobengröße: 250</p>
                 <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-250%, 0%)'}` }}>Stat. Fehler Gesamtergebnis: 11,3 %</p>
                 <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-300%, 0%)'}` }}>Befragungszeitraum: Okt. 22 - Nov. 22 | Mehrfachantwort möglich</p>
-                <a href="#" target="_blank" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>Zu den Ergebnissen</a>
+                <a href={surveyPDF} target="_blank" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>Zu den Ergebnissen</a>
               </div>
             </div>
           </div>
