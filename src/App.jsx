@@ -216,9 +216,10 @@ const App = () => {
         prevActiveIndex={prevActiveIndexRef.current}
         ref={fixedAreaRef}>
         <div id="aboutus" className="initialSection imageBoxSection">
+          <p className="sectionTitle" style={{ transform: `${activeIndex === 0 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>Über Uns</p>
           <div className="boxInner">
-            <div className="backgroundPart" />
-            <div className="sectionInner" >
+            <img src={fifthImage} className="bgImage" width="100%" />
+            <div className="sectionInner">
               <div className="sectionDescription">
                 <div className="descriptionInner">
                   <div className="whiteBox" style={{ transform: `${activeIndex === 0 ? 'translate(0%, 0%)' : 'translate(100%, 0%)'}` }}>
@@ -226,9 +227,6 @@ const App = () => {
                     <p className="authorInfo">Dr. Obiageli „Oby“ Ezekwesili<br />Richard von Weizäcker Fellow of Robert Bosch Academy at the GP Circle Dinner „Governance on Africa, 2020</p>
                   </div>
                 </div>
-              </div>
-              <div className="mapInfo" style={{ transform: `${activeIndex === 0 ? 'translate(0%, 0%)' : 'translate(0%, 150%)'}` }}>
-                <img src={fifthImage} />
               </div>
             </div>
           </div>
