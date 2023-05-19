@@ -214,7 +214,7 @@
             background-color: #ffffff;
             padding: 37px;
             .mainText {
-              font-size: 40px;
+              font-size: 30px;
               font-weight: bold;
               margin-top: 0;
             }
@@ -246,6 +246,9 @@
       }
       .boxInner {
         position: relative;
+        .bgImage {
+          object-position: left center;
+        }
         .sectionInner {
           position: absolute;
           display: flex;
@@ -270,6 +273,9 @@
               }
               .whiteBox {
                 transition: transform 1s;
+                .mainText {
+                  margin-bottom: 0;
+                }
               }
             }
           }
@@ -283,7 +289,7 @@
         transition: transform 1s;
         .mapTitle {
           font-family: 'Rockwell';
-          font-size: 40px;
+          font-size: 30px;
           font-weight: bold;
         }
         img {
@@ -305,6 +311,10 @@
         background-size: cover;
         background-position: center;
       }
+      .green {
+        color: #225e31;
+        margin: 0 8px;
+      }
       .sectionInner {
         position: relative;
         display: flex;
@@ -321,7 +331,7 @@
           // border: 2px solid black;
           max-width: 80%;
           align-self: center;
-          display: flex;
+          // display: flex;
           padding: 20px 10px 10px;
           font-family: "Rockwell";
           transition: transform 1s;
@@ -336,10 +346,11 @@
             position: relative;
             // flex: 1;
             transition: transform 1s;
-            width: 50%;
+            width: 40%;
             bottom: 0%;
             left: 0;
             right: inherit;
+            top: 25%;
             .descriptionInner {
               position: relative;
               img {
@@ -383,11 +394,11 @@
             }
           }
           .mapInfo {
-            width: 50%;
+            width: 60%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: end;
             transition: transform 1s;
             .mapTitle {
               font-family: 'Rockwell';
@@ -400,7 +411,7 @@
             }
             img {
               max-width: 100%;
-              max-height: 60%;
+              max-height: 80%;
             }
           }
         }
@@ -416,9 +427,16 @@
           margin-bottom: 100px;
           font-family: 'Rockwell';
           transition: transform 1s;
+          font-size: 2.1rem;
+          position: absolute;
+          top: 0;
+          max-width: 80%;
+          align-self: center;
+          display: flex;
+          padding: 20px 10px 10px;
           .boxTitle {
             font-weight: bold;
-            font-size: 40px;
+            font-size: 30px;
             margin-bottom: 0;
           }
           .boxSubtitle {
@@ -427,25 +445,33 @@
           }
         }
         .sectionContent {
-          display: flex;
+          display: block;
           width: 100%;
-          justify-content: space-between;
-          .column {
-            flex: 1;
-            padding: 0 10px;
-            box-sizing: border-box;
-            max-width: 33%;
-            transition: transform 1s;
-            z-index: 3;
-            .headline {
-              font-weight: bold;
-              text-align: right;
-              margin-bottom: 10px;
-              font-size: 1.2rem;
-            }
-            .subtext {
-              text-align: right;
-              margin-top: 10px;
+          padding: 0 25px;
+          box-sizing: border-box;
+          margin-top: 150px;
+          .eventSlider {
+            display: inline-flex;
+            width: 100%;
+            justify-content: space-between;
+            .column {
+              flex: 1;
+              padding: 0 10px;
+              box-sizing: border-box;
+              max-width: 33%;
+              transition: transform 1s;
+              z-index: 3;
+              .headline {
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 15px;
+                font-size: 1.1vw;
+              }
+              .subtext {
+                text-align: left;
+                margin-top: 15px;
+                font-size: 0.9vw;
+              }
             }
           }
         }
@@ -456,12 +482,13 @@
         flex-direction: column;
         background-color: burlywood;
         color: #000000;
+        justify-content: flex-start;
         .sectionContent {
           display: flex;
           flex-direction: column;
           padding: 50px;
           z-index: 3;
-          text-align: right;
+          text-align: left;
           font-size: 1.3rem;
           .boxHeader {
             text-align: center;
@@ -469,7 +496,7 @@
             font-family: 'Rockwell';
             .boxTitle {
               font-weight: bold;
-              font-size: 40px;
+              font-size: 30px;
               margin-bottom: 0;
               transition: transform 1s;
             }
@@ -564,10 +591,11 @@
       .sectionDescription {
         padding: 0;
         width: 44%;
-        top: 5%;
+        top: 0%;
         left: 0;
         right: inherit;
         z-index: 3;
+        padding: 37px;
         .descriptionInner {
           img {
             position: absolute;
@@ -577,16 +605,22 @@
             transition: transform 1s;
           }
           .whiteBox {
-            padding: 55px 37px;
+            // padding: 55px 37px;
             transition: transform 1s;
+            padding: 30px;
+            .mainText {
+              margin-bottom: 15px;
+              margin-top: 0;
+            }
             .mainTitle {
               font-weight: bold;
               font-size: 50px;
               margin-top: 20px;
             }
             .subText {
-              font-size: 1.3rem;
-              margin-bottom: 40px;
+              font-size: 1vw;
+              margin-bottom: 30px;
+              margin-top: 0;
             }
             form {
               display: flex;
@@ -714,7 +748,7 @@
       p {
         font-family: 'Rockwell';
         font-weight: bold;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
       }
       .sponsorGrid {

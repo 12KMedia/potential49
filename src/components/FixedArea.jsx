@@ -9,6 +9,8 @@ import blackRoundRevers from '../assets/black_round_corner_reverse.png'
 import blackRound from '../assets/black_round_corner.png'
 import greenCorner from '../assets/green_corner.png'
 import greenRoundCorner from '../assets/green_round_corner.png'
+import greenSquares from '../assets/green_squares.png'
+import greenTriangle from '../assets/green_triangle.png'
 import orangeRoundCorner from '../assets/orange_round_corner.png'
 import redHalfcircles from '../assets/red_halfcircles.png'
 import redSquares from '../assets/red_squares.png'
@@ -52,7 +54,7 @@ const CornerImage = styled.img`
 `;
 
 const topLeftImages = [
-  greenOrange,
+  greenSquares,
   blackRoundRevers,
   orangeRoundCorner,
   redHalfcircles,
@@ -66,8 +68,8 @@ const topLeftImages = [
 ]
 
 const bottomRightImages = [
-  null,
-  blackTriangle,
+  redHalfcircles,
+  greenTriangle,
   redTriangle,
   orangeSquares,
   blackCircle,
@@ -128,7 +130,6 @@ const FixedArea = forwardRef(({ children, activeIndex, prevActiveIndex }, ref) =
                   };
                 `}
               />
-              {activeIndex > 0 && (
                 <CornerImage
                   src={bottomRightImages[activeIndex]}
                   alt="Bottom right"
@@ -142,7 +143,6 @@ const FixedArea = forwardRef(({ children, activeIndex, prevActiveIndex }, ref) =
                     };
                   `}
                 />
-              )}
               {child}
             </SceneContent>
           </div>
