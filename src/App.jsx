@@ -248,7 +248,7 @@ const App = () => {
         <div className="secondSection imageBoxSection">
           <div className="bgImage" style={{ backgroundImage: `url(${orangeBG})` }} />
           <div className="sectionInner">
-            <p className="sectionTitle" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>Gigantischer Binnenmarkt: Die <span className="green">49 Länder</span> der Subsahara</p>
+            <p className="sectionTitle" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>Gigantischer Binnenmarkt: Die <span className="green">49 Länder</span> von Subsahara-Afrika</p>
             <div className="sectionBody">
               <div className="sectionDescription" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>
                 <div className="descriptionInner">
