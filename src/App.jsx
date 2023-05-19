@@ -117,7 +117,7 @@ const App = () => {
     // console.log(`Name: ${name}, Email: ${email}, Topic: ${topic}, Message: ${message}`);
 
     // // Check if the form is valid
-    if (name && email && topic && message) {
+    if (name && email && message) {
       // Send the email with the form data
       // submitForm(name, email, topic, message);
       try {
