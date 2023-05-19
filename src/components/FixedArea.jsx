@@ -25,19 +25,19 @@ import greenHalfcirclesReverse from '../assets/green_halfcircles_reverse.png'
 
 const OuterBox = styled.div`
   position: fixed;
-  top: 150px;
+  top: 100px;
   left: 0%;
   width: 100%;
-  height: calc(90% - 100px);
+  height: calc(90% - 50px);
   overflow: hidden;
 `;
 
 const Container = styled.div`
   position: fixed;
-  top: 150px;
+  top: 100px;
   left: 10%;
   width: 80%;
-  height: calc(90% - 100px);
+  height: calc(90% - 50px);
   z-index: 1;
 `;
 

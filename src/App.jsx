@@ -238,6 +238,7 @@ const App = () => {
                 <div className="descriptionInner">
                   <div className="whiteBox" style={{ transform: `${activeIndex === 0 ? 'translate(0%, 0%)' : 'translate(100%, 0%)'}` }}>
                     <p className="mainText">„Europe should stop thinking of Africa as a charity case.<br />It is a business case!“</p>
+                    <p className="authorInfo">Dr. Obiageli „Oby“ Ezekwesili<br />Richard von Weizäcker Fellow of Robert Bosch Academy at the GP Circle Dinner „Governance on Africa, 2020</p>
                   </div>
                 </div>
               </div>
