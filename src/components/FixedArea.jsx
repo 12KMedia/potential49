@@ -12,6 +12,7 @@ import greenRoundCorner from '../assets/green_round_corner.png'
 import greenSquares from '../assets/green_squares.png'
 import greenTriangle from '../assets/green_triangle.png'
 import orangeRoundCorner from '../assets/orange_round_corner.png'
+import orangeHalfcircles from '../assets/orange_halfcircles.png'
 import redHalfcircles from '../assets/red_halfcircles.png'
 import redSquares from '../assets/red_squares.png'
 import orangeTriangle from '../assets/orange_triangle.png'
@@ -68,7 +69,7 @@ const topLeftImages = [
 ]
 
 const bottomRightImages = [
-  redHalfcircles,
+  orangeHalfcircles,
   greenTriangle,
   redTriangle,
   orangeSquares,
