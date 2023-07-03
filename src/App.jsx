@@ -288,7 +288,7 @@ const App = () => {
             <div className="sectionContent">
               <div className="eventSlider">
                 <div className="column" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
-                  <h2 className="headline">Africa Roundtable in Dakar, Senegal, 2. Dezember 2022</h2>
+                  <h2 className="headline">Africa Roundtable in Dakar, Senegal, <br />2. Dezember 2022</h2>
                   <Slider images={eventImages.event1} />
                   <p className="subtext">Politische, wirtschaftliche und gesellschaftliche Entscheidungsträger:innen aus Afrika und Europa kamen zusammen, um gemeinsam Lösungen zu entwickeln.</p>
                 </div>
@@ -298,7 +298,7 @@ const App = () => {
                   <p className="subtext">Ein gelungener Auftakt des jährlichen Dialogs zwischen führenden Stakeholder:innen, die das "Afrika der Zukunft" gemeinsam gestalten wollen.</p>
                 </div>
                 <div className="column" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
-                  <h2 className="headline">Potential49 Business Lunch in Berlin, 29. März 2023</h2>
+                  <h2 className="headline">Potential49 Business Lunch in Berlin, <br />29. März 2023</h2>
                   <Slider images={eventImages.event3} />
                   <p className="subtext">Wir stellten afrikanischen Botschafter:innen die Initiative vor und sprachen über erste Projektschritte. Das Feedback war durchweg positiv.</p>
                 </div>
@@ -477,7 +477,7 @@ const App = () => {
             <img src={logo} width="30%" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
             <p className="logoSlogan" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }}>Expand smart in Sub-Saharan Africa</p>
           </div>
-          <p>Unsere Projektpartner:</p>
+          <p>Unsere Projektpartner:innen:</p>
           <div className="sponsorGrid">
             <div className="logoRow">
               <img key="0" src={fnfLogo} alt="" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
@@ -493,7 +493,7 @@ const App = () => {
 
       <div className="contentBelow">
         <div className="sponsorSection" id="#sponsors">
-          <p>Unsere Projektpartner</p>
+          <p>Unsere Projektpartner:innen</p>
           <div className="sponsorGrid">
             <Swiper
               slidesPerView={'auto'}
