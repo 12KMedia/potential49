@@ -58,6 +58,8 @@ const topLeftImages = [
   greenSquares,
   blackRoundRevers,
   orangeRoundCorner,
+  orangeRoundCorner,
+  orangeRoundCorner,
   redHalfcircles,
   blackRound,
   blackRound,
@@ -71,6 +73,8 @@ const topLeftImages = [
 const bottomRightImages = [
   orangeHalfcircles,
   greenTriangle,
+  redTriangle,
+  redTriangle,
   redTriangle,
   orangeSquares,
   blackCircle,

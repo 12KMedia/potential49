@@ -49,6 +49,16 @@ import event31 from './assets/lunch_1.jpg'
 import event32 from './assets/lunch_2.jpg'
 import event33 from './assets/lunch_3.jpg'
 
+import youtubeIcon from './assets/youtube_logo.png'
+import spotifyIcon from './assets/spotify_logo.png'
+
+import mokyVideo from './assets/videos/Potential49_MokyMakura.mp4'
+import mokyPreview from './assets/moky_preview.png'
+import edmundVideo from './assets/videos/Potential49_EdmundPoku.mp4'
+import edmundPreview from './assets/edmund_preview.png'
+import chineziVideo from './assets/videos/Potential49_ChineziChijioke.mp4'
+import chineziPreview from './assets/chinezi_preview.png'
+
 import survey1 from './assets/study_1.png'
 import survey2 from './assets/study_2.png'
 
@@ -199,17 +209,17 @@ const App = () => {
                     <ul className="menuItems">
                       <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 0)}>Über uns</a></li>
                       <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 1)}>Zahlen & Fakten</a></li>
-                      <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 3)}>Umfrage</a></li>
+                      <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 5)}>Umfrage</a></li>
                       <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 2)}>Events</a></li>
                       <li className="menuItem"><a href="#" onClick={e => {
-                      e.preventDefault();
-                      window.scrollTo({
-                        top: document.body.scrollHeight,
-                        behavior: 'smooth',
-                      });
-                      setOpenSidebar((prevOpenSidebar) => !prevOpenSidebar);
-                    }}>Partner</a></li>
-                      <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 4)}>Kontakt</a></li>
+                        e.preventDefault();
+                        window.scrollTo({
+                          top: document.body.scrollHeight,
+                          behavior: 'smooth',
+                        });
+                        setOpenSidebar((prevOpenSidebar) => !prevOpenSidebar);
+                      }}>Partner</a></li>
+                      <li className="menuItem"><a href="#" onClick={(e) => handleNavItemClick(e, 6)}>Kontakt</a></li>
                     </ul>
                   </div>
                 </div>
@@ -273,7 +283,7 @@ const App = () => {
         <div className="thirdSection imageBoxSection">
           <div className="boxInner">
             <div className="boxHeader" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
-              <p className="boxTitle">Begegnungen mit Gleichgesinnten für eine völlig neue Strahlkraft</p>
+              <p className="boxTitle">Eine Vision die verbindet - <br />Vor Ort und im Gespräch mit den Insidern der Subsahara Region</p>
             </div>
             <div className="sectionContent">
               <div className="eventSlider">
@@ -296,18 +306,118 @@ const App = () => {
             </div>
           </div>
         </div>
+        <div className="thirdSection imageBoxSection">
+          <div className="boxInner">
+            <div className="boxHeader" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
+              <p className="boxTitle">Themen im Wandel - <br />Der Podcast von Global Perspectives Initiative</p>
+            </div>
+            <div className="sectionContent">
+              <div className="eventSlider">
+                <div className="column" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
+                  <div className="icon-container">
+                    <a href="https://www.youtube.com/watch?v=A4wKEN_XWe8&t=1s" target="_blank" rel="noopener noreferrer">
+                      <img src={youtubeIcon} width="50" />
+                    </a>
+                    <a href="https://open.spotify.com/episode/6d1ZyHpGk9jlVEfL5w0xtX" target="_blank" rel="noopener noreferrer">
+                      <img src={spotifyIcon} width="35" />
+                    </a>
+                  </div>
+                  <div className="podcastBox">
+                    <div className="podcastBg">
+                      <div className="podcastOverlay">
+                        Afrikas Start-Up Szene boomt
+                      </div>
+                    </div>
+                  </div>
+                  <p className="subtext">Sophia Bogner, Paul Hertzberg und Martin Ewald diskutieren, was wir in Europa von afrikanischen Start-ups lernen können.</p>
+                </div>
+                <div className="column" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(0%, -150%)'}` }}>
+                  <div className="icon-container">
+                    <a href="https://www.youtube.com/watch?v=eeJgNKpEWQk&t=1s" target="_blank" rel="noopener noreferrer">
+                      <img src={youtubeIcon} width="50" />
+                    </a>
+                    <a href="https://open.spotify.com/episode/2VxeyMNOE4xpdBewpu1hZ3" target="_blank" rel="noopener noreferrer">
+                      <img src={spotifyIcon} width="35" />
+                    </a>
+                  </div>
+                  <div className="podcastBox">
+                    <div className="podcastBg">
+                      <div className="podcastOverlay">
+                        Feminismus in Afrika und Europa
+                      </div>
+                    </div>
+                  </div>
+                  <p className="subtext">Jennifer Makumbi und Kristina Lunz über sprechen über den Wert und Erfolg feministischer Außenpolitik.</p>
+                </div>
+                <div className="column" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
+                  <div className="icon-container">
+                    <a href="https://www.youtube.com/watch?v=EZitzygQ0i8" target="_blank" rel="noopener noreferrer">
+                      <img src={youtubeIcon} width="50" />
+                    </a>
+                    <a href="https://open.spotify.com/episode/18w5ExsxZz7UOvFzs5b3Yq" target="_blank" rel="noopener noreferrer">
+                      <img src={spotifyIcon} width="35" />
+                    </a>
+                  </div>
+                  <div className="podcastBox">
+                    <div className="podcastBg">
+                      <div className="podcastOverlay">
+                        New Space über Afrika
+                      </div>
+                    </div>
+                  </div>
+                  <p className="subtext">Leago Stella Takalani und Christoph Keese erklären den Einfluss privater Satellitenunternehmen auf Entwicklungsarbeit, Klima- und Migrationsforschung.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="thirdSection imageBoxSection">
+          <div className="boxInner">
+            <div className="boxHeader" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
+              <p className="boxTitle">Eine Vision die verbindet - <br />Vor Ort und im Gespräch mit den Insidern der Subsahara Region</p>
+            </div>
+            <div className="sectionContent">
+              <div className="eventSlider">
+                <div className="column" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
+                  <h2 className="headline">Chinezi Chijioke, Co-Founder & CEO bei Nova Pioneer Education Group</h2>
+                  <video className="background-video" controls poster={chineziPreview}>
+                    <source src={chineziVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <p className="subtext">Welche transformative Kraft wird durch Investitionen in der Subsahara-Region freigesetzt, die neue Chancen und neues Wachstum ermöglicht?</p>
+                </div>
+                <div className="column" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(0%, -150%)'}` }}>
+                  <h2 className="headline">Moky Makura, Executive Director bei Africa No Filter</h2>
+                  <video className="background-video" controls poster={mokyPreview}>
+                    <source src={mokyVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <p className="subtext">Welche Rolle spielt Storytelling bei der Veränderung stereotyper Narrative über die Subsahara Region in Afrika?</p>
+                </div>
+                <div className="column" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
+                  <h2 className="headline">Edmund Poku, Managing Director bei Niche Cocoa Services GmbH</h2>
+                  <video className="background-video" controls poster={edmundPreview}>
+                    <source src={edmundVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <p className="subtext">Welche nachhaltigen Möglichkeiten und welches enorme Potenzial ergibt sich aus internationalen Geschäftsbeziehungen?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="surveySection imageBoxSection">
           <div className="boxInner">
             <div className="sectionContent">
               <div className="boxHeader">
-                <div className="boxTitle" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(0%, -800%)'}` }}>Schwacher Investitionswille trotz positiver Signale</div>
+                <div className="boxTitle" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : 'translate(0%, -800%)'}` }}>Schwacher Investitionswille trotz positiver Signale</div>
               </div>
               <div className="sectionWrapper">
-                <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>Wir haben privatwirtschaftliche Entscheider:innen und Unternehmer:innen mit bis zu 999 Mitarbeitenden befragt, die planen in Zukunft international zu expandieren.</p>
-                <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-200%, 0%)'}` }}>Stichprobengröße: 250</p>
-                <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-250%, 0%)'}` }}>Stat. Fehler Gesamtergebnis: 11,3 %</p>
-                <p style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-300%, 0%)'}` }}>Befragungszeitraum: Okt. 22 - Nov. 22 | Mehrfachantwort möglich</p>
-                <a href={surveyPDF} target="_blank" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }} onClick={(e) => {e.preventDefault(); setModalSurveyOpen(true); setIsModalOpen(true)}}>Zu den Ergebnissen</a>
+                <p style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>Wir haben privatwirtschaftliche Entscheider:innen und Unternehmer:innen mit bis zu 999 Mitarbeitenden befragt, die planen in Zukunft international zu expandieren.</p>
+                <p style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : 'translate(-200%, 0%)'}` }}>Stichprobengröße: 250</p>
+                <p style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : 'translate(-250%, 0%)'}` }}>Stat. Fehler Gesamtergebnis: 11,3 %</p>
+                <p style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : 'translate(-300%, 0%)'}` }}>Befragungszeitraum: Okt. 22 - Nov. 22 | Mehrfachantwort möglich</p>
+                <a href={surveyPDF} target="_blank" style={{ transform: `${activeIndex === 5 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }} onClick={(e) => {e.preventDefault(); setModalSurveyOpen(true); setIsModalOpen(true)}}>Zu den Ergebnissen</a>
               </div>
             </div>
           </div>
@@ -318,7 +428,7 @@ const App = () => {
             <div className="sectionInner">
               <div className="sectionDescription">
                 <div className="descriptionInner">
-                  <div className="whiteBox" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(0%, 250%)'}` }}>
+                  <div className="whiteBox" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : 'translate(0%, 250%)'}` }}>
                     <p className="mainText">Kontakt</p>
                     <p className="subText">Es ist Zeit, das Bild von Subsahara-Afrika zu verbessern!<br /><br />Wir freuen uns über den Austausch mit Ihnen.</p>
                     {sentMessage &&
@@ -356,7 +466,7 @@ const App = () => {
                   </div>
                 </div>
               </div>
-              <div className="personInfo" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
+              <div className="personInfo" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
                 <p className="authorInfo">Stephan Balzer,<br />Initiator</p>
               </div>
             </div>
@@ -364,18 +474,18 @@ const App = () => {
         </div>
         <div className="sponsorSection">
           <div className="initialRow">
-            <img src={logo} width="30%" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
-            <p className="logoSlogan" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }}>Expand smart in Sub-Saharan Africa</p>
+            <img src={logo} width="30%" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
+            <p className="logoSlogan" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }}>Expand smart in Sub-Saharan Africa</p>
           </div>
           <p>Unsere Initiatoren und Projektpartner:</p>
           <div className="sponsorGrid">
             <div className="logoRow">
-              <img key="0" src={fnfLogo} alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
-              <img key="1" src={globalLogo} alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 500%)'}` }} />
+              <img key="0" src={fnfLogo} alt="" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
+              <img key="1" src={globalLogo} alt="" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, 500%)'}` }} />
             </div>
             <div className="logoRow">
-              <img key="2" src={hiddenChampionLogo} height="80%" alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
-              <img key="3" src={phineoLogo} alt="" style={{ transform: `${activeIndex === 10 ? 'translate(0%, 0%)' : 'translate(0%, 500%)'}` }} />
+              <img key="2" src={hiddenChampionLogo} height="80%" alt="" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
+              <img key="3" src={phineoLogo} alt="" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, 500%)'}` }} />
             </div>
           </div>
         </div>
@@ -643,6 +753,20 @@ const App = () => {
       <InView
         threshold={0.5}
         onChange={(inView) => handleInViewChange(4, inView)}
+      >
+        <div style={{ height: '100vh' }} />
+      </InView>
+
+      <InView
+        threshold={0.5}
+        onChange={(inView) => handleInViewChange(5, inView)}
+      >
+        <div style={{ height: '100vh' }} />
+      </InView>
+
+      <InView
+        threshold={0.5}
+        onChange={(inView) => handleInViewChange(6, inView)}
       >
         <div style={{ height: '100vh' }} />
       </InView>

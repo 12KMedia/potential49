@@ -203,7 +203,7 @@
         height: 100%;
       }
       .sectionDescription {
-        font-family: 'Rockwell';
+        // font-family: 'Rockwell';
         position: absolute;
         top: 40%;
         right: 0;
@@ -241,7 +241,7 @@
         top: -30px;
         z-index: 1;
         width: 100%;
-        font-family: "Rockwell";
+        // font-family: "Rockwell";
         transition: transform 1s;
       }
       .boxInner {
@@ -289,7 +289,7 @@
         padding-right: 50px;
         transition: transform 1s;
         .mapTitle {
-          font-family: 'Rockwell';
+          // font-family: 'Rockwell';
           font-size: 30px;
           font-weight: bold;
         }
@@ -334,7 +334,7 @@
           align-self: center;
           // display: flex;
           padding: 20px 10px 10px;
-          font-family: "Rockwell";
+          // font-family: "Rockwell";
           transition: transform 1s;
         }
         .sectionBody {
@@ -381,7 +381,7 @@
                       background-size: 10px; // Adjust the size of the bullet image as needed
                       position: absolute;
                       left: 0;
-                      top: 33%;
+                      top: 50%;
                       transform: translateY(-50%) rotate(-45deg); // Rotate the pseudo-element by 45°
                       width: 10px; // Match the width of the background image
                       height: 10px; // Match the height of the background image
@@ -402,7 +402,7 @@
             justify-content: end;
             transition: transform 1s;
             .mapTitle {
-              font-family: 'Rockwell';
+              // font-family: 'Rockwell';
               font-size: 30px;
               font-weight: bold;
               text-align: center;
@@ -426,12 +426,12 @@
         .boxHeader {
           text-align: center;
           margin-bottom: 100px;
-          font-family: 'Rockwell';
+          // font-family: 'Rockwell';
           transition: transform 1s;
           font-size: 2.1rem;
           position: absolute;
           top: -30px;
-          max-width: 80%;
+          max-width: 85%;
           align-self: center;
           display: flex;
           padding: 20px 10px 10px;
@@ -462,6 +462,7 @@
               max-width: 33%;
               transition: transform 1s;
               z-index: 3;
+              position: relative;
               .headline {
                 font-weight: bold;
                 text-align: left;
@@ -472,6 +473,39 @@
                 text-align: left;
                 margin-top: 15px;
                 font-size: 0.9vw;
+              }
+              .icon-container {
+                display: flex;
+                justify-content: flex-start;
+                gap: 10px;
+                padding-bottom: 10px;
+              }
+              .podcastBox {
+                .podcastBg {
+                  background-image: url('assets/podcast_bg.jpg');
+                  width: 100%;
+                  height: 0;
+                  padding-bottom: 100%; /* This will give a aspect ratio of 4:3 (height:width), adjust as needed */
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  position: relative;
+                  .podcastOverlay {
+                    box-sizing: border-box;
+                    position: absolute;
+                    bottom: 0;
+                    color: black;
+                    width: 100%;
+                    padding: 20px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    font-weight: bold;
+                  }
+                }
+              }
+              .background-video {
+                width: 100%;
+                height: auto;
               }
             }
           }
@@ -494,7 +528,7 @@
           .boxHeader {
             text-align: center;
             margin: 0 auto 150px auto;
-            font-family: 'Rockwell';
+            // font-family: 'Rockwell';
             .boxTitle {
               font-weight: bold;
               font-size: 30px;
@@ -676,7 +710,7 @@
     .statistics {
       display: flex;
       position: relative;
-      font-family: 'Rockwell';
+      // font-family: 'Rockwell';
       font-weight: bold;
       flex-direction: column;
       // margin-top: 400px;
@@ -729,14 +763,14 @@
         text-decoration: none;
         color: #00a3d5;
         font-weight: bold;
-        font-family: 'Rockwell';
+        // font-family: 'Rockwell';
         font-size: 25px;
       }
     }
   }
   .contentBelow {
     position: absolute;
-    top: calc((100vh * 5) + 10vh); // Adjust this value based on the number of FixedArea children
+    top: calc((100vh * 7) + 10vh); // Adjust this value based on the number of FixedArea children
     width: 100%;
     background: white; // Or any background color you prefer
     z-index: 5;
@@ -750,7 +784,7 @@
       justify-content: space-evenly;
       align-items: center;
       p {
-        font-family: 'Rockwell';
+        // font-family: 'Rockwell';
         font-weight: bold;
         font-size: 30px;
         text-align: center;
