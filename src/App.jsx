@@ -283,7 +283,7 @@ const App = () => {
         <div className="thirdSection imageBoxSection">
           <div className="boxInner">
             <div className="boxHeader" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
-              <p className="boxTitle">Eine Vision die verbindet - <br />Vor Ort und im Gespräch mit den Insider:innen der Subsahara Region</p>
+              <p className="boxTitle">Eine Vision, die verbindet - <br />Vor Ort und im Gespräch mit Insider:innen</p>
             </div>
             <div className="sectionContent">
               <div className="eventSlider">
@@ -298,9 +298,9 @@ const App = () => {
                   <p className="subtext">Ein gelungener Auftakt des jährlichen Dialogs zwischen führenden Stakeholder:innen, die das "Afrika der Zukunft" gemeinsam gestalten wollen.</p>
                 </div>
                 <div className="column" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
-                  <h2 className="headline">Potential 49 Business Lunch in Berlin, 29. März 2023</h2>
+                  <h2 className="headline">Potential49 Business Lunch in Berlin, 29. März 2023</h2>
                   <Slider images={eventImages.event3} />
-                  <p className="subtext">Wir stellten afrikanischen Botschafter:innen aus Subsahara-Afrika die Initiative vor und sprachen über erste Projektschritte. Das Feedback war durchweg positiv.</p>
+                  <p className="subtext">Wir stellten afrikanischen Botschafter:innen die Initiative vor und sprachen über erste Projektschritte. Das Feedback war durchweg positiv.</p>
                 </div>
               </div>
             </div>
