@@ -248,7 +248,7 @@ const App = () => {
                 <div className="descriptionInner">
                   <div className="whiteBox" style={{ transform: `${activeIndex === 0 ? 'translate(0%, 0%)' : 'translate(100%, 0%)'}` }}>
                     <p className="mainText">„Europe should stop thinking of Africa as a charity case.<br />It is a business case!“</p>
-                    <p className="authorInfo">Dr. Obiageli „Oby“ Ezekwesili<br />Richard von Weizäcker Fellow of Robert Bosch Academy at the GP Circle Dinner „Governance on Africa, 2020</p>
+                    <p className="authorInfo">Dr. Obiageli „Oby“ Ezekwesili<br />Richard von Weizsäcker Fellow of Robert Bosch Academy at the GP Circle Dinner „Governance of Africa“, 2020</p>
                   </div>
                 </div>
               </div>
@@ -258,7 +258,7 @@ const App = () => {
         <div className="secondSection imageBoxSection">
           <div className="bgImage" style={{ backgroundImage: `url(${orangeBG})` }} />
           <div className="sectionInner">
-            <p className="sectionTitle" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>Gigantischer Binnenmarkt: Die <span className="green">49 Länder</span> von Subsahara-Afrika</p>
+            <p className="sectionTitle" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>Gigantischer Binnenmarkt: Die <span className="green">49 Länder</span> der afrikanischen Subsahara</p>
             <div className="sectionBody">
               <div className="sectionDescription" style={{ transform: `${activeIndex === 1 ? 'translate(0%, 0%)' : 'translate(0%, -120%)'}` }}>
                 <div className="descriptionInner">
@@ -283,24 +283,24 @@ const App = () => {
         <div className="thirdSection imageBoxSection">
           <div className="boxInner">
             <div className="boxHeader" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
-              <p className="boxTitle">Eine Vision die verbindet - <br />Vor Ort und im Gespräch mit den Insidern der Subsahara Region</p>
+              <p className="boxTitle">Eine Vision die verbindet - <br />Vor Ort und im Gespräch mit den Insider:innen der Subsahara Region</p>
             </div>
             <div className="sectionContent">
               <div className="eventSlider">
                 <div className="column" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
                   <h2 className="headline">Africa Roundtable in Dakar, Senegal, 2. Dezember 2022</h2>
                   <Slider images={eventImages.event1} />
-                  <p className="subtext">Politische, wirtschaftliche und gesellschaftliche Entscheidungsträger aus Afrika und Europa kamen zusammen, um gemeinsam Lösungen zu entwickeln.</p>
+                  <p className="subtext">Politische, wirtschaftliche und gesellschaftliche Entscheidungsträger:innen aus Afrika und Europa kamen zusammen, um gemeinsam Lösungen zu entwickeln.</p>
                 </div>
                 <div className="column" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(0%, -150%)'}` }}>
-                  <h2 className="headline">African Hidden Champions Summit in Frankfurt, 22-23 September 2022</h2>
+                  <h2 className="headline">African Hidden Champions Summit in Frankfurt, 22.-23. September 2022</h2>
                   <Slider images={eventImages.event2} />
-                  <p className="subtext">Ein gelungener Auftakt eines jährlichen Dialogs zwischen führenden Stakeholder, die das "Afrika der Zukunft" gemeinsam gestalten wollen.</p>
+                  <p className="subtext">Ein gelungener Auftakt des jährlichen Dialogs zwischen führenden Stakeholder:innen, die das "Afrika der Zukunft" gemeinsam gestalten wollen.</p>
                 </div>
                 <div className="column" style={{ transform: `${activeIndex === 2 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
-                  <h2 className="headline">Potential 49 Business Lunch, Berlin 29. März 2023</h2>
+                  <h2 className="headline">Potential 49 Business Lunch in Berlin, 29. März 2023</h2>
                   <Slider images={eventImages.event3} />
-                  <p className="subtext">Wir stellten Botschaftern aus Subsahara-Afrika die Initiative vor und sprachen über erste Projektschritte. Das Feedback war durchweg positiv.</p>
+                  <p className="subtext">Wir stellten afrikanischen Botschafter:innen aus Subsahara-Afrika die Initiative vor und sprachen über erste Projektschritte. Das Feedback war durchweg positiv.</p>
                 </div>
               </div>
             </div>
@@ -325,7 +325,7 @@ const App = () => {
                   <div className="podcastBox">
                     <div className="podcastBg">
                       <div className="podcastOverlay">
-                        Afrikas Start-Up Szene boomt
+                        Afrikas Start-up-Szene boomt
                       </div>
                     </div>
                   </div>
@@ -347,7 +347,7 @@ const App = () => {
                       </div>
                     </div>
                   </div>
-                  <p className="subtext">Jennifer Makumbi und Kristina Lunz über sprechen über den Wert und Erfolg feministischer Außenpolitik.</p>
+                  <p className="subtext">Jennifer Makumbi und Kristina Lunz sprechen über den Wert und Erfolg feministischer Außenpolitik.</p>
                 </div>
                 <div className="column" style={{ transform: `${activeIndex === 3 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
                   <div className="icon-container">
@@ -374,7 +374,7 @@ const App = () => {
         <div className="thirdSection imageBoxSection">
           <div className="boxInner">
             <div className="boxHeader" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(-150%, 0%)'}` }}>
-              <p className="boxTitle">Eine Vision die verbindet - <br />Vor Ort und im Gespräch mit den Insidern der Subsahara Region</p>
+              <p className="boxTitle">Impulse afrikanischer Entrepreneure - <br />Einblicke von der African Hidden Champions Summit</p>
             </div>
             <div className="sectionContent">
               <div className="eventSlider">
@@ -392,7 +392,7 @@ const App = () => {
                     <source src={mokyVideo} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  <p className="subtext">Welche Rolle spielt Storytelling bei der Veränderung stereotyper Narrative über die Subsahara Region in Afrika?</p>
+                  <p className="subtext">Welche Rolle spielt Storytelling bei der Veränderung stereotyper Narrative über die Subsahara-Region in Afrika?</p>
                 </div>
                 <div className="column" style={{ transform: `${activeIndex === 4 ? 'translate(0%, 0%)' : 'translate(150%, 0%)'}` }}>
                   <h2 className="headline">Edmund Poku, Managing Director bei Niche Cocoa Services GmbH</h2>
@@ -430,7 +430,7 @@ const App = () => {
                 <div className="descriptionInner">
                   <div className="whiteBox" style={{ transform: `${activeIndex === 6 ? 'translate(0%, 0%)' : 'translate(0%, 250%)'}` }}>
                     <p className="mainText">Kontakt</p>
-                    <p className="subText">Es ist Zeit, das Bild von Subsahara-Afrika zu verbessern!<br /><br />Wir freuen uns über den Austausch mit Ihnen.</p>
+                    <p className="subText">Es ist Zeit, das Bild der Subsahara-Afrika zu verbessern!<br /><br />Wir freuen uns auf den Austausch mit Ihnen.</p>
                     {sentMessage &&
                       <p>Danke für deine Nachricht! Wir werden uns umgehend bei dir melden.</p>
                     }
@@ -477,7 +477,7 @@ const App = () => {
             <img src={logo} width="30%" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }} />
             <p className="logoSlogan" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, -500%)'}` }}>Expand smart in Sub-Saharan Africa</p>
           </div>
-          <p>Unsere Initiatoren und Projektpartner:</p>
+          <p>Unsere Projektpartner:</p>
           <div className="sponsorGrid">
             <div className="logoRow">
               <img key="0" src={fnfLogo} alt="" style={{ transform: `${activeIndex === 12 ? 'translate(0%, 0%)' : 'translate(0%, 300%)'}` }} />
@@ -493,7 +493,7 @@ const App = () => {
 
       <div className="contentBelow">
         <div className="sponsorSection" id="#sponsors">
-          <p>Unsere Initiatoren und Projektpartner</p>
+          <p>Unsere Projektpartner</p>
           <div className="sponsorGrid">
             <Swiper
               slidesPerView={'auto'}

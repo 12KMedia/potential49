@@ -370,7 +370,7 @@
                   margin-bottom: 0;
                   li {
                     font-weight: 600;
-                    font-size: 1.3vw;
+                    font-size: 1.1vw;
                     margin-bottom: 20px;
                     padding-left: 20px; // Adjust the left padding to make space for the bullet image
                     position: relative;
@@ -473,6 +473,7 @@
                 text-align: left;
                 margin-top: 15px;
                 font-size: 0.9vw;
+                line-height: 1.2vw;
               }
               .icon-container {
                 display: flex;
@@ -524,7 +525,7 @@
           padding: 50px;
           z-index: 3;
           text-align: left;
-          font-size: 1.3rem;
+          font-size: 1.1vw;
           .boxHeader {
             text-align: center;
             margin: 0 auto 150px auto;
@@ -653,7 +654,7 @@
               margin-top: 20px;
             }
             .subText {
-              font-size: 1vw;
+              font-size: 1.1vw;
               margin-bottom: 30px;
               margin-top: 0;
             }
@@ -673,13 +674,13 @@
               input[type="password"] {
                 border: 2px solid black;
                 padding: 0.5rem;
-                font-size: 1rem;
+                font-size: 1.1vw;
                 margin-top: 0.5rem;
               }
               textarea {
                 border: 2px solid black;
                 padding: 0.5rem;
-                font-size: 1rem;
+                font-size: 1.1vw;
                 margin-top: 0.5rem;
                 height: 3.5em;
                 resize: vertical;
@@ -689,7 +690,7 @@
                 padding: 0.5rem 1rem;
                 background-color: black;
                 color: white;
-                font-size: 1rem;
+                font-size: 1.1vw;
                 border: none;
                 cursor: pointer;
               }
